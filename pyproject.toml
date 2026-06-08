@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentops-research-agent"
+version = "0.1.0"
+description = "OpenAI research agent with AgentOps observability."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "agentops==0.4.21",
+    "openai==1.90.0",
+    "python-dotenv==1.2.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.0.3",
+]
+
+[project.scripts]
+agentops-research-agent = "agentops_research_agent.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

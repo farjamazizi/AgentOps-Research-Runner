@@ -1,0 +1,9 @@
+services:
+  research-agent:
+    build: .
+    env_file:
+      - .env
+    environment:
+      PYTHONUNBUFFERED: "1"
+    command:
+      - run
